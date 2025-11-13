@@ -206,6 +206,220 @@ public class Main {
 			}
 		}
 
+		// === VARIABLES, TIPOS Y OPERADORES (ADICIONALES) ===
+		// Declaración simple y muestra
+		int entero = 100;
+		System.out.println("int entero = " + entero);
+
+		// Declaración y asignación en una sola línea de double
+		double miDouble = 3.1415;
+		System.out.println("double miDouble = " + miDouble);
+
+		// String simple
+		String texto = "Hola desde Main";
+		System.out.println("String: " + texto);
+
+		// Tipos primitivos completos
+		byte tb = 10;
+		short ts = 3000;
+		int ti = 50000;
+		long tl = 1_000_000_000L;
+		float tf = 2.5f;
+		double td = 6.28;
+		boolean tbool = true;
+		char tchar = 'Z';
+		System.out.println("byte=" + tb + " short=" + ts + " int=" + ti + " long=" + tl + " float=" + tf + " double=" + td + " boolean=" + tbool + " char=" + tchar);
+
+		// Arreglo int[] tamaño 3
+		int[] arr3 = new int[3];
+		arr3[0] = 7;
+		arr3[1] = 14;
+		arr3[2] = 21;
+		System.out.println("Arreglo int[3]: " + Arrays.toString(arr3));
+
+		// Clase Persona local y uso (definida dentro de main para mantener todo en main)
+		class Persona {
+			String nombre;
+			int edad;
+			Persona(String n, int e) { this.nombre = n; this.edad = e; }
+			public String toString() { return nombre + " (" + edad + " años)"; }
+		}
+		Persona p = new Persona("Mariana", 28);
+		System.out.println("Persona creada: " + p);
+
+		// Operadores aritméticos básicos
+		int a = 10, b2 = 3;
+		System.out.println("a + b = " + (a + b2));
+		System.out.println("a - b = " + (a - b2));
+		System.out.println("a * b = " + (a * b2));
+		System.out.println("a / b (entera) = " + (a / b2));
+		System.out.println("a / b (decimal) = " + ((double)a / b2));
+		System.out.println("a % b = " + (a % b2));
+
+		// Incremento / Decremento
+		int inc = 5;
+		System.out.println("inc = " + inc);
+		inc++;
+		System.out.println("inc++ -> " + inc);
+		++inc;
+		System.out.println("++inc -> " + inc);
+		inc--;
+		System.out.println("inc-- -> " + inc);
+
+		// Operadores de asignación
+		int asum = 10;
+		asum += 5; // 15
+		System.out.println("asum += 5 -> " + asum);
+		asum -= 3; // 12
+		System.out.println("asum -= 3 -> " + asum);
+		int amul = 4;
+		amul *= 3; // 12
+		System.out.println("amul *= 3 -> " + amul);
+		amul /= 2; // 6
+		System.out.println("amul /= 2 -> " + amul);
+		int amod = 10;
+		amod %= 3; // 1
+		System.out.println("amod %= 3 -> " + amod + " (resto de división)");
+
+		// Operadores de comparación
+		System.out.println("a == b? " + (a == b2));
+		System.out.println("a != b? " + (a != b2));
+		System.out.println("a > b? " + (a > b2));
+		System.out.println("a < b? " + (a < b2));
+		System.out.println("a >= b? " + (a >= b2));
+		System.out.println("a <= b? " + (a <= b2));
+
+		// Operadores lógicos
+		boolean p1 = true, p2 = false;
+		System.out.println("p1 && p2 = " + (p1 && p2));
+		System.out.println("p1 || p2 = " + (p1 || p2));
+		System.out.println("!p1 = " + (!p1));
+		System.out.println("(p1 || p2) && (a > b) = " + ((p1 || p2) && (a > b2)));
+
+		// If simples
+		if (a > b2) {
+			System.out.println("a es mayor que b2");
+		}
+
+		// If-else
+		if (a % 2 == 0) {
+			System.out.println("a es par");
+		} else {
+			System.out.println("a es impar");
+		}
+
+		// If-else if-else para tres rangos
+		int numRange = 7;
+		if (numRange < 5) {
+			System.out.println(numRange + " es pequeño");
+		} else if (numRange <= 10) {
+			System.out.println(numRange + " es medio");
+		} else {
+			System.out.println(numRange + " es grande");
+		}
+
+		// Operador ternario
+		int edad = 20;
+		String mayor = (edad >= 18) ? "mayor de edad" : "menor de edad";
+		System.out.println("Edad " + edad + ": " + mayor);
+
+		int cantidad = 12;
+		double descuento = (cantidad > 10) ? 0.1 : 0.0;
+		System.out.println("Descuento aplicado: " + (descuento * 100) + "%");
+
+		int numT = 7;
+		String parImpar = (numT % 2 == 0) ? "par" : "impar";
+		System.out.println(numT + " es " + parImpar);
+
+		// Switch: día -> número
+		String dia = "Martes";
+		switch (dia.toLowerCase()) {
+			case "lunes":
+				System.out.println(dia + " -> 1");
+				break;
+			case "martes":
+				System.out.println(dia + " -> 2");
+				break;
+			case "miercoles":
+			case "miércoles":
+				System.out.println(dia + " -> 3");
+				break;
+			case "jueves":
+				System.out.println(dia + " -> 4");
+				break;
+			case "viernes":
+				System.out.println(dia + " -> 5");
+				break;
+			default:
+				System.out.println(dia + " -> día desconocido o fin de semana");
+		}
+
+		// Switch: calificación numérica a texto (agrupando casos)
+		int grade = 9;
+		switch (grade) {
+			case 10:
+			case 9:
+				System.out.println("Calificación: Excelente");
+				break;
+			case 8:
+				System.out.println("Calificación: Muy bueno");
+				break;
+			case 7:
+				System.out.println("Calificación: Bueno");
+				break;
+			case 6:
+				System.out.println("Calificación: Suficiente");
+				break;
+			default:
+				System.out.println("Calificación: Insuficiente");
+		}
+
+		// Switch: estación del año según número
+		int est = 3;
+		switch (est) {
+			case 1:
+				System.out.println("Invierno");
+				break;
+			case 2:
+				System.out.println("Primavera");
+				break;
+			case 3:
+				System.out.println("Verano");
+				break;
+			case 4:
+				System.out.println("Otoño");
+				break;
+			default:
+				System.out.println("Número de estación inválido");
+		}
+
+		// Otros ejemplos: positivo/negativo/cero
+		int valor = -5;
+		if (valor > 0) {
+			System.out.println(valor + " es positivo");
+		} else if (valor < 0) {
+			System.out.println(valor + " es negativo");
+		} else {
+			System.out.println(valor + " es cero");
+		}
+
+		// Validar contraseña (comparación directa simple)
+		String claveEsperada = "abc123";
+		String clavePrueba = "abc123";
+		System.out.println("Clave válida? " + claveEsperada.equals(clavePrueba));
+
+		// Clasificar una calificación con if-else if-else
+		double nota = 7.5;
+		if (nota < 5.0) {
+			System.out.println("Insuficiente");
+		} else if (nota < 7.0) {
+			System.out.println("Suficiente");
+		} else if (nota < 9.0) {
+			System.out.println("Bueno");
+		} else {
+			System.out.println("Excelente");
+		}
+
 		sc.close();
 	}
 }
